@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { clerkClient } from "@clerk/nextjs";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
@@ -59,6 +61,7 @@ export async function POST(req: Request) {
   // CREATE
   if (eventType === "user.created") {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+    console.log(`inside of eventType user created ${email_addresses}`)
 
     const user = {
       clerkId: id,
@@ -70,6 +73,7 @@ export async function POST(req: Request) {
     };
 
     const newUser = await createUser(user);
+    console.log("user has been created")
 
     // Set public metadata
     if (newUser) {
