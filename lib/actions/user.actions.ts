@@ -9,7 +9,6 @@ import { handleError } from "../utils";
 // CREATE
 export async function createUser(user: CreateUserParams) {
   try {
-    console.log("haii")
     await connectToDatabase();
 
     const newUser = await User.create(user);
