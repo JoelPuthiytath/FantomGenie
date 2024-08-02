@@ -17,13 +17,13 @@ const Sidebar = () => {
           <Image
             src="/assets/images/logo-text.png"
             alt="logo"
-            width={120}
-            height={10}
+            width={180}
+            height={30}
           />
         </Link>
         <nav className="sidebar-nav">
           <SignedIn>
-            <ul className="sidebar-nav_elements">
+            <ul className="sidebar-nav_elements ">
               {navLinks.slice(0, 6).map((link) => {
                 const isActive = link.route === pathname;
                 return (
